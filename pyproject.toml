@@ -1,0 +1,48 @@
+[project]
+name = "zt-zjj-kpconv-pytorch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "matplotlib>=3.9.4",
+  "mayavi>=4.8.2",
+  "numpy>=2.0.2",
+  "pyqt5>=5.15.11",
+  "pyyaml>=6.0.2",
+  "scikit-learn>=1.6.1",
+  "torch[cu128]>=2.7.0",
+  "torchaudio[cu128]>=2.7.0",
+  "torchvision[cu128]>=0.22.0",
+]
+
+[project.optional-dependencies]
+cpu = ["torch", "torchvision", "torchaudio"]
+cu128 = ["torch", "torchvision", "torchaudio"]
+
+[tool.uv]
+conflicts = [[{ extra = "cpu" }, { extra = "cu128" }]]
+
+[tool.uv.sources]
+torch = [
+  { index = "torchcpu", extra = "cpu" },
+  { index = "torchcu128", extra = "cu128" },
+]
+torchvision = [
+  { index = "torchcpu", extra = "cpu" },
+  { index = "torchcu128", extra = "cu128" },
+]
+torchaudio = [
+  { index = "torchcpu", extra = "cpu" },
+  { index = "torchcu128", extra = "cu128" },
+]
+
+[[tool.uv.index]]
+name = "torchcpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "torchcu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

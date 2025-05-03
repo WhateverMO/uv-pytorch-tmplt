@@ -37,6 +37,10 @@ curl -LsSf <https://astral.sh/uv/install.sh> | sh
 source $HOME/.local/bin/env.fish
 source $HOME/.local/bin/env
 
+uv tool install nvitop
+or
+uvx nvitop
+
 uv add torch[cu128] torchvision[cu128] torchaudio[cu128] numpy scikit-learn pyyaml matplotlib mayavi pyqt5
 or
 uv sync --extra cu128

@@ -5,15 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-  "matplotlib>=3.9.4",
-  "mayavi>=4.8.2",
-  "numpy>=2.0.2",
-  "pyqt5>=5.15.11",
-  "pyyaml>=6.0.2",
-  "scikit-learn>=1.6.1",
-  "torch[cu128]>=2.7.0",
-  "torchaudio[cu128]>=2.7.0",
-  "torchvision[cu128]>=0.22.0",
+  "matplotlib",
+  "mayavi",
+  "numpy<1.23.0",
+  "setuptools<65",
+  "pyqt5",
+  "pyyaml",
+  "scikit-learn",
+  "torch[cu128]",
+  "torchaudio[cu128]",
+  "torchvision[cu128]",
 ]
 
 [project.optional-dependencies]

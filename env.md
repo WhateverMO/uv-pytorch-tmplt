@@ -6,6 +6,9 @@ docker run -it --network=host --shm-size=24g --gpus all --name cuda12.8 -v /home
 chsh -s /bin/bash
 apt update
 apt install sudo vim fish curl git -y
+
+id 1000
+
 useradd zjj -p zjj
 usermod -a zjj -G sudo
 groupadd admin
@@ -14,7 +17,10 @@ mkdir -p /home/zjj
 chown -R zjj:zjj /home/zjj
 passwd zjj
 su zjj
-chsh -s /bin/bash
+
+passwd ubuntu
+
+chsh -s /usr/bin/fish
 cd
 ln -s /home/work work
 
@@ -32,7 +38,6 @@ sudo dpkg -i bottom_${BOTTOM_VERSION}-1_amd64.deb && rm -rf bottom_*
 
 source ~/.bashrc
 
-chsh -s /usr/bin/fish
 
 cd
 sudo apt upgrade -y

@@ -1,4 +1,5 @@
 docker run -it --gpus all --name cuda12.8 -v /home/zjj/Documents/workspace/:/home/work nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04 bash
+docker run -it --network=host --shm-size=24g --gpus all --name cuda12.8 -v /home/:/home/work nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04 bash
 <https://hub.docker.com/r/nvidia/cuda>
 
 ```sh
